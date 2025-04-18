@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>泛雲實業 - 購物車</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">泛雲實業</a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="products.html">商品介紹</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+        <li class="cart-icon">
+          <a href="cart.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="cart">
+    <h2>購物車</h2>
+    <div class="cart-items" id="cartItems">
+      <!-- 購物車商品將在這裡動態生成 -->
+      <p class="empty-cart-message">您的購物車是空的</p>
+    </div>
+    <div class="cart-summary">
+      <button class="inquiry-btn">詢價</button>
+    </div>
+  </section>
+
+<!-- 詢價表單彈出視窗 -->
+<!-- 購物車內容保持不變... -->
+
+<!-- 詢價表單彈出視窗 -->
+<!-- 詢價表單彈出視窗 -->
+<div class="inquiry-modal" id="inquiryModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>商品詢價表單</h2>
+    <form id="inquiryForm" action="https://formsubmit.co/pancloud0819@outlook.com" method="POST">
+      <!-- FormSubmit 必要設定 -->
+      <input type="hidden" name="_subject" value="新客戶詢價 - 泛雲實業">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://index.html">
+      <input type="text" name="_honey" style="display:none">
+      
+      <!-- 客戶資訊 -->
+      <div class="form-section">
+        <h3>客戶資訊</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">姓名*</label>
+            <input type="text" id="name" name="姓名" required placeholder="請輸入您的姓名">
+          </div>
+          <div class="form-group">
+            <label for="company">公司名稱</label>
+            <input type="text" id="company" name="公司名稱" placeholder="選填">
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">電子郵件*</label>
+            <input type="email" id="email" name="電子郵件" required placeholder="example@domain.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">聯絡電話*</label>
+            <input type="tel" id="phone" name="聯絡電話" required placeholder="0912-345-678">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="address">郵寄地址</label>
+          <input type="text" id="address" name="郵寄地址" placeholder="如需寄送樣品請填寫">
+        </div>
+      </div>
+      
+      <!-- 商品清單 -->
+      <div class="form-section">
+        <h3>詢價商品清單</h3>
+        <div class="inquiry-items" id="inquiryItems">
+          <!-- 商品將在這裡動態生成 -->
+        </div>
+        <input type="hidden" name="商品清單" id="inquiryItemsData">
+        <div class="summary-badge">
+          共 <span id="totalItems">0</span> 件商品
+        </div>
+      </div>
+      
+      <!-- 其他資訊 -->
+      <div class="form-section">
+        <div class="form-group">
+          <label for="notes">其他需求說明</label>
+          <textarea id="notes" name="其他需求說明" rows="3" placeholder="如有特殊需求或備註請在此說明"></textarea>
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="button" class="cancel-btn">取消</button>
+        <button type="submit" class="submit-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2L11 13"></path>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
+          送出詢價
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <footer class="footer">
+    <p>&copy; 2025 泛雲實業. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
