@@ -91,3 +91,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // 更新購物車數量
   updateCartCount();
 });
+// 測試用 - 顯示所有商品
+renderProducts(products);
