@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "雲端儲存基礎版",
             price: 299,
             category: "儲存",
-            image: "images/cloud-storage.jpg",
+            image: "images/1.jpg",
             description: "10GB雲端儲存空間"
         },
         {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "企業VPN方案",
             price: 599,
             category: "安全",
-            image: "images/vpn.jpg",
+            image: "images/2.jpg",
             description: "專業級企業VPN服務"
         }
     ];
