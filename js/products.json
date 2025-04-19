@@ -1,18 +1,26 @@
-{
-  "工具類": [
+[
     {
-      "name": "斜口鉗",
-      "description": "適用於剪斷細小金屬線的工具",
-      "image": "pliers.jpg"
-
-    }
-  ],
-  "耗材類": [
+        "id": 1,
+        "name": "範例商品1",
+        "price": 299,
+        "category": "電子產品",
+        "description": "這是第一個範例商品",
+        "image": "./images/product1.jpg"
+    },
     {
-      "name": "電工膠帶",
-      "description": "用於電氣絕緣的必備耗材",
-      "image": "pliers.jpg"
-
+        "id": 2,
+        "name": "範例商品2",
+        "price": 599,
+        "category": "家居用品",
+        "description": "這是第二個範例商品",
+        "image": "./images/product2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "範例商品3",
+        "price": 199,
+        "category": "電子產品",
+        "description": "這是第三個範例商品",
+        "image": "./images/product3.jpg"
     }
-  ]
-}
+]
