@@ -1,27 +1,26 @@
 [
     {
         "id": 1,
-        "name": "範例商品1",
-        "price": 299,
-        "category": "電子產品",
-        "description": "這是第一個範例商品",
-        "image": "./images/product1.jpg"
+        "name": "雲端儲存方案",
+        "price": 999,
+        "category": "雲端服務",
+        "description": "專業級雲端儲存解決方案",
+        "image": "images/cloud-storage.jpg"
     },
     {
         "id": 2,
-        "name": "範例商品2",
-        "price": 599,
-        "category": "家居用品",
-        "description": "這是第二個範例商品",
-        "image": "./images/product2.jpg"
+        "name": "企業VPN",
+        "price": 1499,
+        "category": "網絡安全",
+        "description": "安全可靠的企業級VPN服務",
+        "image": "images/vpn-service.jpg"
     },
     {
         "id": 3,
-        "name": "範例商品3",
-        "price": 199,
-        "category": "電子產品",
-        "description": "這是第三個範例商品",
-        "image": "./images/product3.jpg"
+        "name": "數據備份",
+        "price": 799,
+        "category": "雲端服務",
+        "description": "自動化數據備份解決方案",
+        "image": "images/data-backup.jpg"
     }
 ]
-
