@@ -2,20 +2,15 @@
   "工具類": [
     {
       "name": "斜口鉗",
-      "description": "適合剪切細小金屬線",
-      "image": "斜口鉗.jpg"
-    },
-    {
-      "name": "十字起子",
-      "description": "適用各種螺絲轉動",
+      "description": "適用於剪斷細小金屬線的工具",
       "image": "斜口鉗.jpg"
     }
   ],
   "耗材類": [
     {
-      "name": "絕緣膠帶",
-      "description": "用於電氣絕緣保護",
-      "image": "斜口鉗.jpg"
+      "name": "電工膠帶",
+      "description": "用於電氣絕緣的必備耗材",
+      "image": "膠帶.jpg"
     }
   ]
 }
