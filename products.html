@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>商品介紹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>泛雲實業 - 商品介紹</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
-      <ul id="categoryList">
-        <li onclick="loadProducts('工具類')">工具類</li>
-        <li onclick="loadProducts('耗材類')">耗材類</li>
-        <!-- 可再增加分類 -->
+    <aside>
+      <h2>商品分類</h2>
+      <ul>
+        <li><a href="#" onclick="loadProducts('工具類')">工具類</a></li>
+        <li><a href="#" onclick="loadProducts('耗材類')">耗材類</a></li>
       </ul>
     </aside>
-    <main class="content">
-      <div id="productList">
-        <p>請選擇左側類別來瀏覽商品</p>
-      </div>
+    <main>
+      <h2 id="categoryTitle">請從左側選擇商品分類</h2>
+      <div id="productList" class="product-list"></div>
     </main>
   </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
