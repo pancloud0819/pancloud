@@ -1,3 +1,7 @@
+if (window.location.protocol === 'file:') {
+  alert("請透過 GitHub Pages 網址訪問，本地檔案可能無法正常使用購物車功能！");
+}
+
 // 初始化購物車
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
