@@ -9,7 +9,7 @@ const products = [
     category: "工具類",
     subcategory: "手持工具",
     price: 1200,
-    image: "images/product5.jpg",
+    image: "pancloud/images/product5.jpg",
     description: "專業級螺絲起子組，包含多種規格"
   },
   {
@@ -18,7 +18,7 @@ const products = [
     category: "工具類",
     subcategory: "電動起子",
     price: 2500,
-    image: "images/product2.jpg",
+    image: "pancloud/images/product2.jpg",
     description: "高效能無線電動起子，電池續航力強"
   },
   {
@@ -27,7 +27,7 @@ const products = [
     category: "量測工具",
     subcategory: "雷射測距儀",
     price: 3500,
-    image: "images/product3.jpg",
+    image: "pancloud/images/product3.jpg",
     description: "精準雷射測距，最大測量距離50米"
   }
 ];
