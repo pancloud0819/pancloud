@@ -5,7 +5,14 @@ if (window.location.protocol === 'file:') {
 // 初始化購物車
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// 商品數據
+// ========== GitHub Pages 优化版 ========== //
+// 自动检测基础路径
+const BASE_PATH = (() => {
+  const path = window.location.pathname;
+  return path.includes('github.io') ? '/' + path.split('/')[1] : '';
+})();
+
+// 商品数据（修正图片路径）
 const products = [
   {
     id: 1,
@@ -13,7 +20,7 @@ const products = [
     category: "工具類",
     subcategory: "手持工具",
     price: 1200,
-    image: "pancloud/images/product5.jpg",
+    image: `${BASE_PATH}images/product1.jpg`, // 动态路径
     description: "專業級螺絲起子組，包含多種規格"
   },
   {
@@ -22,7 +29,7 @@ const products = [
     category: "工具類",
     subcategory: "電動起子",
     price: 2500,
-    image: "pancloud/images/product2.jpg",
+    image: `${BASE_PATH}images/product2.jpg`,
     description: "高效能無線電動起子，電池續航力強"
   },
   {
@@ -31,11 +38,36 @@ const products = [
     category: "量測工具",
     subcategory: "雷射測距儀",
     price: 3500,
-    image: "pancloud/images/product3.jpg",
+    image: `${BASE_PATH}images/product3.jpg`,
     description: "精準雷射測距，最大測量距離50米"
   }
 ];
 
+// 渲染函数（支持动态路径）
+function renderProducts(filteredProducts) {
+  const productGrid = document.getElementById('productGrid');
+  if (!productGrid) return;
+
+  let html = '';
+  filteredProducts.forEach(product => {
+    html += `
+      <div class="product-card" data-id="${product.id}">
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+        <h3>${product.title}</h3>
+        <div class="price">NT$ ${product.price}</div>
+        <button class="button">查看詳情</button>
+      </div>
+    `;
+  });
+  productGrid.innerHTML = html;
+}
+
+// 表单提交动态设置（在setupInquiryModal函数内）
+function setupInquiryModal() {
+  // ...其他代码...
+  document.getElementById('inquiryForm').action = 
+    `https://formsubmit.co/pancloud0819@outlook.com`;
+}
 // 渲染商品函數
 function renderProducts(filteredProducts) {
   const productGrid = document.getElementById('productGrid');
