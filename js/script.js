@@ -1,38 +1,43 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const categoryList = document.querySelectorAll(".category-list li");
-  const productDetails = document.getElementById("product-details");
+  const categoryList = document.querySelectorAll("#categoryList li");
+  const productList = document.getElementById("productList");
+  const categoryTitle = document.getElementById("categoryTitle");
+
+  let products = {};
 
   try {
     const response = await fetch("js/products.json");
-    const products = await response.json();
+    products = await response.json();
+  } catch (error) {
+    console.error("載入商品資料失敗", error);
+    productList.innerHTML = "<p>商品資料載入失敗。</p>";
+    return;
+  }
 
-    categoryList.forEach(item => {
-      item.addEventListener("click", () => {
-        const category = item.getAttribute("data-category");
-        const categoryProducts = products[category];
+  categoryList.forEach(item => {
+    item.addEventListener("click", () => {
+      const category = item.getAttribute("data-category");
+      categoryTitle.textContent = category;
 
-        productDetails.innerHTML = ""; // 清空原本內容
+      const categoryProducts = products[category] || [];
 
-        if (categoryProducts && categoryProducts.length > 0) {
-          categoryProducts.forEach(product => {
-            const productCard = document.createElement("div");
-            productCard.classList.add("product-card");
+      productList.innerHTML = "";
 
-            productCard.innerHTML = `
-              <img src="images/${product.image}" alt="${product.name}">
-              <h3>${product.name}</h3>
-              <p>${product.description}</p>
-            `;
+      if (categoryProducts.length === 0) {
+        productList.innerHTML = "<p>此分類目前無商品。</p>";
+        return;
+      }
 
-            productDetails.appendChild(productCard);
-          });
-        } else {
-          productDetails.innerHTML = "<p>此分類暫無商品。</p>";
-        }
+      categoryProducts.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product-card";
+        div.innerHTML = `
+          <img src="images/${product.image}" alt="${product.name}" width="160" />
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+        `;
+        productList.appendChild(div);
       });
     });
-  } catch (error) {
-    console.error("載入產品資料失敗：", error);
-    productDetails.innerHTML = "<p>產品資料載入失敗。</p>";
-  }
+  });
 });
